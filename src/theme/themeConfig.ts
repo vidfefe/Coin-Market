@@ -43,6 +43,13 @@ const theme: ThemeConfig = {
     Message: {
       contentBg: " rgba(38,23,59,1) ",
     },
+    Card: {
+      headerHeight: 50,
+    },
+    Typography: {
+      titleMarginBottom: 0,
+      titleMarginTop: 0,
+    },
   },
 };
 

@@ -1,5 +1,5 @@
 import { message } from "antd";
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 type MessageType = "success" | "error" | "info" | "warning";
 
@@ -10,14 +10,34 @@ interface useMessageHandler {
 
 export const useMessageHandler = (): useMessageHandler => {
   const [messageApi, contextHolder] = message.useMessage();
+  const [messageState, setMessageState] = useState<{
+    type: MessageType;
+    content: string;
+  } | null>(null);
+
+  useEffect(() => {
+    if (messageState) {
+      const { type, content } = messageState;
+
+      messageApi.open({
+        type,
+        content,
+        duration: 2,
+      });
+
+      const timeoutId = setTimeout(() => {
+        setMessageState(null);
+      }, 2000);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [messageState, messageApi]);
 
   const showMessage = (type: MessageType, content: string) => {
-    messageApi.open({
-      type,
-      content,
-    });
+    if (!messageState) {
+      setMessageState({ type, content });
+    }
   };
-  console.log(messageApi);
 
   return { showMessage, contextHolder };
 };

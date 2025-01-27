@@ -7,6 +7,7 @@ import { getCoins } from "@/api/coinApi";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import CoinImage from "./CoinImage";
 import { useMessageHandler } from "@/hooks/useMessageHandler";
+import { useRouter } from "next/navigation";
 
 interface CoinsData {
   id: string;
@@ -78,6 +79,8 @@ export default function CoinTable({ searchCoin }: { searchCoin: string }) {
 
   const { showMessage, contextHolder } = useMessageHandler();
 
+  const navigate = useRouter();
+
   const loadCoins = useCallback(async (page: number, pageSize: number) => {
     setIsLoading(true);
     const limit = (page - 1) * pageSize;
@@ -111,6 +114,9 @@ export default function CoinTable({ searchCoin }: { searchCoin: string }) {
         dataSource={filteredCoins}
         loading={isLoading}
         rowKey="id"
+        onRow={(record) => ({
+          onClick: () => navigate.push(`/coin/${record.id}`),
+        })}
         pagination={{
           current: pagination.currentPage,
           pageSize: pagination.pageSize,
