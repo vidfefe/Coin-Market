@@ -3,6 +3,15 @@ body{
   color: #ffffff !important;
   margin: 0;
   overflow-x: hidden;
-  margin: 0 20px 0 20px
+  margin: 0
 }
+html{
+  overflow-x: hidden;
+}
+
+header{
+  width: 100vw;
+  height: auto;
+}
+
 

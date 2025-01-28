@@ -5,11 +5,13 @@ import { useMessageHandler } from "@/hooks/useMessageHandler";
 import { useRouter, useParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { Row, Col, Button } from "antd";
-import Loader from "@/components/Loader";
-import PriceChart from "@/components/PriceChart";
-import CoinStatistics from "@/components/CoinStatistics";
-import CoinInfo from "@/components/CoinInfo";
+import Loader from "@/components/Loader/Loader";
+import PriceChart from "@/components/PriceChart/PriceChart";
+import CoinStatistics from "@/components/CoinStatistics/CoinStatistics";
+import CoinInfo from "@/components/CoinInfo/CoinInfo";
 import { getUnixTimestamps } from "@/utils/getUnixTimestampsUtils";
+import ButtonAddCoin from "@/components/ButtonAddCoin";
+import ButtonPortfolio from "@/components/ButtonPortfolio/ButtonPortfolio";
 
 interface CoinHistory {
   time: number;
@@ -17,6 +19,8 @@ interface CoinHistory {
 }
 
 interface CoinDetails {
+  id: string;
+  changePercent24Hr: string;
   name: string;
   symbol: string;
   priceUsd: string;
@@ -97,9 +101,11 @@ export default function CoinDetailsPage() {
               </Button>
             </Col>
             <Col>
-              <Button type="primary" size="large">
-                Add to Portfolio
-              </Button>
+              <ButtonPortfolio
+                isAddCoinMode={true}
+                size="large"
+                coin={coinData}
+              />
             </Col>
           </Row>
 

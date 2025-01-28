@@ -30,6 +30,7 @@ const theme: ThemeConfig = {
     Button: {
       fontWeight: 500,
       primaryShadow: "0 2px 0 rgb(94 3 231 / 30%)",
+      dangerShadow: "0 2px 0 rgb(255 77 79 / 30%)",
     },
 
     Pagination: {
@@ -49,6 +50,14 @@ const theme: ThemeConfig = {
     Typography: {
       titleMarginBottom: 0,
       titleMarginTop: 0,
+    },
+    Layout: {
+      headerPadding: 10,
+      headerBg: "transparent",
+    },
+    Modal: {
+      contentBg: "rgba(38,23,59,1)",
+      headerBg: "rgba(38,23,59,1)",
     },
   },
 };

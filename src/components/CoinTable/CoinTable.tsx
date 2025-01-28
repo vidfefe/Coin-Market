@@ -5,66 +5,12 @@ import { Button, Table, TableProps } from "antd";
 
 import { getCoins } from "@/api/coinApi";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import CoinImage from "./CoinImage";
+import CoinImage from "../CoinImage/CoinImage";
 import { useMessageHandler } from "@/hooks/useMessageHandler";
 import { useRouter } from "next/navigation";
-
-interface CoinsData {
-  id: string;
-  rank: string;
-  symbol: string;
-  name: string;
-  priceUsd: string;
-  marketCapUsd: string;
-  changePercent24Hr: string;
-}
-
-const columns: TableProps<CoinsData>["columns"] = [
-  {
-    title: "Symbol",
-    dataIndex: "symbol",
-    key: "symbol",
-  },
-  {
-    title: "Logo",
-    dataIndex: "symbol",
-    key: "logo",
-    render: (symbol) => <CoinImage symbol={symbol} />,
-  },
-  {
-    title: "Price",
-    dataIndex: "priceUsd",
-    key: "price",
-    render: (priceUsd) => formatNumber(parseFloat(priceUsd)),
-    sorter: (a, b) => parseFloat(a.priceUsd) - parseFloat(b.priceUsd),
-  },
-  {
-    title: "Market Cap USD",
-    dataIndex: "marketCapUsd",
-    key: "marketCapUsd",
-    render: (marketCapUsd) => formatNumber(parseFloat(marketCapUsd)),
-    sorter: (a, b) => parseFloat(a.marketCapUsd) - parseFloat(b.marketCapUsd),
-  },
-  {
-    title: "Change in 24h",
-    dataIndex: "changePercent24Hr",
-    key: "changePercent24Hr",
-    render: (changePercent24Hr) => (
-      <span
-        style={{ color: parseFloat(changePercent24Hr) > 0 ? "green" : "red" }}
-      >
-        {parseFloat(changePercent24Hr).toFixed(2)}%
-      </span>
-    ),
-    sorter: (a, b) =>
-      parseFloat(a.changePercent24Hr) - parseFloat(b.changePercent24Hr),
-  },
-  {
-    title: "Action",
-    key: "action",
-    render: () => <Button type="primary">Add</Button>,
-  },
-];
+import ButtonAddCoin from "../ButtonAddCoin";
+import { columns } from "./columns";
+import { CoinsData } from "@/types/coinsData";
 
 export default function CoinTable({ searchCoin }: { searchCoin: string }) {
   const [coins, setCoins] = useState<CoinsData[]>([]);
@@ -115,7 +61,20 @@ export default function CoinTable({ searchCoin }: { searchCoin: string }) {
         loading={isLoading}
         rowKey="id"
         onRow={(record) => ({
-          onClick: () => navigate.push(`/coin/${record.id}`),
+          onClick: (event) => {
+            const target = event.target as HTMLElement;
+
+            const modals = document.querySelectorAll(".ant-modal");
+            const isModalVisible = Array.from(modals).some(
+              (modal) => window.getComputedStyle(modal).display !== "none",
+            );
+
+            if (isModalVisible || target.closest("button")) {
+              return;
+            }
+
+            navigate.push(`/coin/${record.id}`);
+          },
         })}
         pagination={{
           current: pagination.currentPage,
@@ -127,6 +86,7 @@ export default function CoinTable({ searchCoin }: { searchCoin: string }) {
           },
           position: ["bottomCenter"],
         }}
+        scroll={{ x: 500 }}
       />
     </>
   );
