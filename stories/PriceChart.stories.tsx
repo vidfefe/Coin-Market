@@ -4,6 +4,7 @@ import PriceChart from "../src/components/PriceChart/PriceChart";
 import theme from "@/theme/themeConfig";
 import { ConfigProvider } from "antd";
 import "@/app/globals.css";
+import React from "react";
 
 const meta: Meta<typeof PriceChart> = {
   component: PriceChart,

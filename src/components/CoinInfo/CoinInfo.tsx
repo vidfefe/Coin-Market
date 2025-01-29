@@ -1,6 +1,7 @@
-import { Row, Col, Typography, Card, Flex } from "antd";
+import { Typography, Flex } from "antd";
 import { formatNumber } from "@/utils/formatNumberUtils";
 import CoinImage from "@/components/CoinImage/CoinImage";
+import React from "react";
 
 interface CoinInfoProps {
   name: string;

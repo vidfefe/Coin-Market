@@ -3,6 +3,7 @@ import CoinStatistics from "../src/components/CoinStatistics/CoinStatistics";
 import "@/app/globals.css";
 import theme from "@/theme/themeConfig";
 import { ConfigProvider } from "antd";
+import React from "react";
 
 const meta: Meta<typeof CoinStatistics> = {
   component: CoinStatistics,

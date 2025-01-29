@@ -1,9 +1,10 @@
-import type { Meta, StoryObj, Preview } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
 import SearchBar from "../src/components/SearchBar/SearchBar";
 import "@/app/globals.css";
 import theme from "@/theme/themeConfig";
 import { ConfigProvider } from "antd";
+import React from "react";
 
 const meta: Meta<typeof SearchBar> = {
   component: SearchBar,

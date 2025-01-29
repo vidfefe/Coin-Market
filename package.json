@@ -25,6 +25,7 @@
   "devDependencies": {
     "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@chromatic-com/storybook": "3.2.4",
+    "@eslint/js": "^9.19.0",
     "@playwright/test": "^1.50.0",
     "@storybook/addon-essentials": "8.5.2",
     "@storybook/addon-interactions": "8.5.2",
@@ -36,11 +37,14 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
+    "eslint": "^9.19.0",
     "eslint-config-next": "15.1.6",
+    "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-storybook": "^0.11.2",
+    "globals": "^15.14.0",
     "prettier": "3.4.2",
     "storybook": "8.5.2",
-    "typescript": "^5"
+    "typescript": "^5",
+    "typescript-eslint": "^8.22.0"
   }
 }

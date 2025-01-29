@@ -3,6 +3,7 @@ import CoinImage from "@/components/CoinImage/CoinImage";
 import type { TableProps } from "antd";
 import type { CoinsData } from "@/types/coinsData";
 import ButtonPortfolio from "../ButtonPortfolio/ButtonPortfolio";
+import React from "react";
 
 export const columns: TableProps<CoinsData>["columns"] = [
   {

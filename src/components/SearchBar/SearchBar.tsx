@@ -1,6 +1,8 @@
 "use client";
 
 import { Input } from "antd";
+import React from "react";
+
 const { Search } = Input;
 
 export type SearchBarProps = {

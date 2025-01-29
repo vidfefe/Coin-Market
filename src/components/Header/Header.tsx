@@ -6,6 +6,8 @@ import { Row, Col, Flex, Layout, Typography } from "antd";
 import { formatNumber } from "@/utils/formatNumberUtils";
 import { useMessageHandler } from "@/hooks/useMessageHandler";
 import ButtonPortfolio from "../ButtonPortfolio/ButtonPortfolio";
+import { CoinsData } from "@/types/coinsData";
+import React from "react";
 
 const { Header: AntHeader } = Layout;
 const { Title } = Typography;
@@ -20,14 +22,15 @@ export default function Header() {
     try {
       const coins = await getCoins(3, 0);
       setPopularCoins(
-        coins.map((coin: any) => ({
+        coins.map((coin: CoinsData) => ({
           id: coin.id,
           rank: coin.rank,
           name: coin.name,
           priceUsd: parseFloat(coin.priceUsd),
         })),
       );
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       showMessage(
         "error",
         "Failed to load popular coins. Please try again later",

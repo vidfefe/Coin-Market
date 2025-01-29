@@ -6,6 +6,7 @@ import theme from "@/theme/themeConfig";
 import { action } from "@storybook/addon-actions";
 import { PortfolioProvider } from "@/context/PortfolioContext";
 import "@/app/globals.css";
+import React from "react";
 
 const meta: Meta<typeof PortfolioModalContent> = {
   title: "Components/ModalPortfolio/PortfolioModalContent",

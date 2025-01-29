@@ -5,6 +5,7 @@ import { ConfigProvider } from "antd";
 import theme from "@/theme/themeConfig";
 import { action } from "@storybook/addon-actions";
 import "@/app/globals.css";
+import React from "react";
 
 const metaAddCoin: Meta<typeof AddCoinModalContent> = {
   title: "Components/ModalPortfolio/AddCoinModalContent",

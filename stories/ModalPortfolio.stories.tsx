@@ -6,6 +6,7 @@ import { ConfigProvider } from "antd";
 import theme from "@/theme/themeConfig";
 import { action } from "@storybook/addon-actions";
 import "@/app/globals.css";
+import React from "react";
 
 const meta: Meta<typeof ModalPortfolio> = {
   title: "Components/ModalPortfolio/ModalPortfolio",

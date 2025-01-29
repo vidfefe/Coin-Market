@@ -3,6 +3,7 @@ import CoinInfo from "../src/components/CoinInfo/CoinInfo";
 import "@/app/globals.css";
 import theme from "@/theme/themeConfig";
 import { ConfigProvider } from "antd";
+import React from "react";
 
 const meta: Meta<typeof CoinInfo> = {
   component: CoinInfo,

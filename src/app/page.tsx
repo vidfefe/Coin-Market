@@ -4,6 +4,7 @@ import CoinTable from "@/components/CoinTable/CoinTable";
 import { Col, Row } from "antd";
 import { useState } from "react";
 import SearchBar from "@/components/SearchBar/SearchBar";
+import React from "react";
 
 export default function Home() {
   const [searchCoin, setSearchCoin] = useState<string>("");

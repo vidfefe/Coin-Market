@@ -3,7 +3,7 @@
 import { getCoinDetails, getCoinHistory } from "@/api/coinApi";
 import { useMessageHandler } from "@/hooks/useMessageHandler";
 import { useRouter, useParams } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Row, Col, Button } from "antd";
 import Loader from "@/components/Loader/Loader";
 import PriceChart from "@/components/PriceChart/PriceChart";
@@ -11,22 +11,16 @@ import CoinStatistics from "@/components/CoinStatistics/CoinStatistics";
 import CoinInfo from "@/components/CoinInfo/CoinInfo";
 import { getUnixTimestamps } from "@/utils/getUnixTimestampsUtils";
 import ButtonPortfolio from "@/components/ButtonPortfolio/ButtonPortfolio";
+import { CoinDetails } from "@/types/coinsData";
 
 interface CoinHistory {
   time: number;
   priceUsd: number;
 }
 
-interface CoinDetails {
-  id: string;
-  changePercent24Hr: string;
-  name: string;
-  symbol: string;
+interface CoinHistoryApiResponse {
+  time: number;
   priceUsd: string;
-  marketCapUsd: string;
-  supply: string;
-  maxSupply: string;
-  rank: string;
 }
 
 export default function CoinDetailsPage() {
@@ -48,12 +42,13 @@ export default function CoinDetailsPage() {
       ]);
       setCoinData(details);
       setCoinHistory(
-        history.map((item: any) => ({
+        history.map((item: CoinHistoryApiResponse) => ({
           time: item.time,
           priceUsd: parseFloat(item.priceUsd),
         })),
       );
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       showMessage("error", "Failed to load coin data. Please try again later");
     } finally {
       setIsLoading(false);

@@ -3,6 +3,7 @@ import CoinImage from "../CoinImage/CoinImage";
 import { formatNumber } from "@/utils/formatNumberUtils";
 import { CoinsData } from "@/types/coinsData";
 import { PortfolioCoin } from "@/types/portfolioCoin";
+import React from "react";
 
 export function AddCoinModalContent({
   coin,
@@ -63,7 +64,7 @@ export function PortfolioModalContent({
         {
           title: "Actions",
           key: "actions",
-          render: (_, record: any) => (
+          render: (_, record: PortfolioCoin) => (
             <Button danger onClick={() => handleRemoveCoin(record.id)}>
               Remove
             </Button>

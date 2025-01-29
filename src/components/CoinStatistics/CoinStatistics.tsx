@@ -1,5 +1,6 @@
-import { Row, Col, Typography, Card, Flex } from "antd";
+import { Row, Col, Typography, Card } from "antd";
 import { formatNumber } from "@/utils/formatNumberUtils";
+import React from "react";
 
 interface CoinStatisticsProps {
   supply: string;

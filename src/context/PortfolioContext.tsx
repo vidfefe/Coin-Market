@@ -69,6 +69,7 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
         currentPriceUsd += currentPrice * coin.quantity;
       }
     } catch (error) {
+      console.error(error);
       throw new Error("Failed to load current coin prices");
     }
 

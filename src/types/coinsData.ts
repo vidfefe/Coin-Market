@@ -7,3 +7,15 @@ export interface CoinsData {
   marketCapUsd: string;
   changePercent24Hr: string;
 }
+
+export interface CoinDetails {
+  id: string;
+  changePercent24Hr: string;
+  name: string;
+  symbol: string;
+  priceUsd: string;
+  marketCapUsd: string;
+  supply: string;
+  maxSupply: string;
+  rank: string;
+}

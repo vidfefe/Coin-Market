@@ -3,7 +3,7 @@ import ButtonPortfolio from "../src/components/ButtonPortfolio/ButtonPortfolio";
 import { ConfigProvider } from "antd";
 import theme from "@/theme/themeConfig";
 import React from "react";
-import { PortfolioProvider, usePortfolio } from "@/context/PortfolioContext";
+import { PortfolioProvider } from "@/context/PortfolioContext";
 import { CoinsData } from "@/types/coinsData";
 import "@/app/globals.css";
 
@@ -74,7 +74,6 @@ export const AddCoinMode: Story = {
       },
     },
   },
-  play: async ({ args }) => {},
 };
 
 export const PortfolioMode: Story = {

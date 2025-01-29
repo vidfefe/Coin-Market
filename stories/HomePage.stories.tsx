@@ -3,7 +3,7 @@ import Home from "../src/app/page";
 import { ConfigProvider } from "antd";
 import theme from "@/theme/themeConfig";
 import React from "react";
-import { PortfolioProvider, usePortfolio } from "@/context/PortfolioContext";
+import { PortfolioProvider } from "@/context/PortfolioContext";
 import "@/app/globals.css";
 
 const meta: Meta<typeof Home> = {

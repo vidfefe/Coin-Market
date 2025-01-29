@@ -4,6 +4,7 @@ import { ConfigProvider } from "antd";
 import theme from "@/theme/themeConfig";
 import { PortfolioProvider } from "@/context/PortfolioContext";
 import "@/app/globals.css";
+import React from "react";
 
 const meta: Meta<typeof Header> = {
   title: "Components/Header",

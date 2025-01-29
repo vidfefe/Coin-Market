@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import CoinTable from "../src/components/CoinTable/CoinTable";
 import theme from "@/theme/themeConfig";
 import React from "react";
-import { PortfolioProvider, usePortfolio } from "@/context/PortfolioContext";
+import { PortfolioProvider } from "@/context/PortfolioContext";
 import { ConfigProvider } from "antd";
 import "@/app/globals.css";
 

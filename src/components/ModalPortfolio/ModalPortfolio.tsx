@@ -1,5 +1,5 @@
 import { Modal } from "antd";
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 
 interface CustomModalProps {
   visible: boolean;

@@ -7,6 +7,7 @@ import Header from "../components/Header/Header";
 import { PortfolioProvider } from "@/context/PortfolioContext";
 import { Content } from "antd/es/layout/layout";
 import "@ant-design/v5-patch-for-react-19";
+import React from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

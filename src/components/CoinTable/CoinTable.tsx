@@ -7,6 +7,7 @@ import { useMessageHandler } from "@/hooks/useMessageHandler";
 import { useRouter } from "next/navigation";
 import { columns } from "./columns";
 import { CoinsData } from "@/types/coinsData";
+import React from "react";
 
 export default function CoinTable({ searchCoin }: { searchCoin: string }) {
   const [coins, setCoins] = useState<CoinsData[]>([]);

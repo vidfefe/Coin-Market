@@ -10,6 +10,7 @@ import {
   PortfolioModalContent,
 } from "../ModalPortfolio/ModalContent";
 import Footer from "../ModalPortfolio/ModalFooter";
+import React from "react";
 
 const { Text } = Typography;
 
