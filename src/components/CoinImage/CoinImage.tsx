@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Image } from "antd";
+import React from "react";
 
 interface CoinImageProps {
   symbol: string;

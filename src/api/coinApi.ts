@@ -9,7 +9,7 @@ export async function getCoins(limit: number, offset: number) {
     });
     return response.data.data;
   } catch (error) {
-    throw new Error("Failed to load coins");
+    console.error(error);
   }
 }
 
@@ -18,7 +18,7 @@ export async function getCoinDetails(id: string) {
     const response = await axios.get(`${API_URL}/assets/${id}`);
     return response.data.data;
   } catch (error) {
-    throw new Error("Failed to load coin details");
+    console.error(error);
   }
 }
 
@@ -38,6 +38,6 @@ export async function getCoinHistory(
     });
     return response.data.data;
   } catch (error) {
-    throw new Error("Failed to load coin history.");
+    console.error(error);
   }
 }
