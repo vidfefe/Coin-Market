@@ -83,7 +83,9 @@ export default function ButtonPortfolio({
       <Flex vertical={true} align="start">
         <Text>Portfolio:</Text>
         <Text>
-          ${formatNumber(calculatePortfolioValue())}{" "}
+          <span data-testid="portfolio-value">
+            ${formatNumber(calculatePortfolioValue())}
+          </span>{" "}
           {portfolioDifference.difference >= 0 ? (
             <span style={{ color: "green" }}>
               +{formatNumber(portfolioDifference.difference)} (

@@ -1,14 +1,10 @@
 "use client";
 
-import { formatNumber } from "@/utils/formatNumberUtils";
-import { Button, Table, TableProps } from "antd";
-
+import { Table } from "antd";
 import { getCoins } from "@/api/coinApi";
 import { useCallback, useEffect, useMemo, useState } from "react";
-import CoinImage from "../CoinImage/CoinImage";
 import { useMessageHandler } from "@/hooks/useMessageHandler";
 import { useRouter } from "next/navigation";
-import ButtonAddCoin from "../ButtonAddCoin";
 import { columns } from "./columns";
 import { CoinsData } from "@/types/coinsData";
 

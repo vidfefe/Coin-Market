@@ -1,8 +1,8 @@
 import { formatNumber } from "@/utils/formatNumberUtils";
 import CoinImage from "@/components/CoinImage/CoinImage";
-import ButtonAddCoin from "../ButtonAddCoin";
 import type { TableProps } from "antd";
 import type { CoinsData } from "@/types/coinsData";
+import ButtonPortfolio from "../ButtonPortfolio/ButtonPortfolio";
 
 export const columns: TableProps<CoinsData>["columns"] = [
   {
@@ -47,6 +47,6 @@ export const columns: TableProps<CoinsData>["columns"] = [
   {
     title: "Action",
     key: "action",
-    render: (_, coin) => <ButtonAddCoin coin={coin} />,
+    render: (_, coin) => <ButtonPortfolio coin={coin} isAddCoinMode={true} />,
   },
 ];

@@ -8,7 +8,7 @@ interface CoinStatisticsProps {
   rank: string;
 }
 
-const { Title, Text } = Typography;
+const { Text } = Typography;
 export default function CoinStatistics({
   supply,
   maxSupply,

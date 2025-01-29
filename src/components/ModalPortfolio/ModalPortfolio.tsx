@@ -1,8 +1,5 @@
-import { Modal, Button, InputNumber, Table, Typography } from "antd";
+import { Modal } from "antd";
 import { ReactNode } from "react";
-import { CoinsData } from "@/types/coinsData";
-
-const { Text } = Typography;
 
 interface CustomModalProps {
   visible: boolean;

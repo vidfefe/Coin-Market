@@ -10,7 +10,6 @@ import PriceChart from "@/components/PriceChart/PriceChart";
 import CoinStatistics from "@/components/CoinStatistics/CoinStatistics";
 import CoinInfo from "@/components/CoinInfo/CoinInfo";
 import { getUnixTimestamps } from "@/utils/getUnixTimestampsUtils";
-import ButtonAddCoin from "@/components/ButtonAddCoin";
 import ButtonPortfolio from "@/components/ButtonPortfolio/ButtonPortfolio";
 
 interface CoinHistory {

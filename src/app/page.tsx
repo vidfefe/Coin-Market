@@ -1,9 +1,7 @@
 "use client";
 
 import CoinTable from "@/components/CoinTable/CoinTable";
-import styles from "./page.module.css";
 import { Col, Row } from "antd";
-import Search from "antd/es/input/Search";
 import { useState } from "react";
 import SearchBar from "@/components/SearchBar/SearchBar";
 
