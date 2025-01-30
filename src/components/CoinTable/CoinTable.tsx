@@ -76,7 +76,7 @@ export default function CoinTable({ searchCoin }: { searchCoin: string }) {
             }
 
             const imageModal = document.querySelector(
-              ".ant-image-preview-root",
+              ".ant-image-preview-wrap",
             );
             if (
               imageModal &&

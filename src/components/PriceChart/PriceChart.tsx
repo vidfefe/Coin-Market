@@ -41,7 +41,7 @@ export default function PriceChart({
           <Select
             value={interval}
             onChange={onIntervalChange}
-            style={{ width: 100, marginLeft: "16px" }}
+            className="interval-select"
           >
             <Option value="m5">1 Hour</Option>
             <Option value="m30">12 Hours</Option>
