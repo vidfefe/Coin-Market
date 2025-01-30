@@ -12,6 +12,40 @@ html{
 header{
   width: 100vw;
   height: auto;
+  
+  margin-bottom: 20px;
+  line-height: 0;
+  padding-top: 15px;
+  height: auto;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.portfolio-value{
+  height: auto;
+  padding: 5px 10px;
+}
 
+.positive-value{
+  color: green;
+}
+
+.negative-value{
+  color: red;
+}
+
+.coin-title {
+  margin: 0;
+}
+
+.centered-position{
+  min-height: 100vh;
+}
+
+.full-width{
+  width: 100%;
+}
+
+.interval-select{
+  width: 100px;
+  margin-left: 16px;
+}

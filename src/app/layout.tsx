@@ -30,9 +30,7 @@ export default function RootLayout({
         <html lang="en">
           <body className={`${geistSans.variable} `}>
             <Header />
-            <Content style={{ marginRight: "10px", marginLeft: "10px" }}>
-              {children}
-            </Content>
+            <Content>{children}</Content>
           </body>
         </html>
       </PortfolioProvider>

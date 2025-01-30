@@ -53,8 +53,8 @@ export default function ButtonPortfolio({
   }, [isPortfolioMode, loadPortfolioDifference]);
 
   const handleAddCoin = () => {
-    if (quantity < 1 || quantity > 1000) {
-      showMessage("error", `Quantity must be between 1 and 1000`);
+    if (quantity < 0 || quantity > 1000) {
+      showMessage("error", `Quantity must be between 0 and 1000`);
       return;
     }
 
@@ -74,34 +74,6 @@ export default function ButtonPortfolio({
   const handleRemoveCoin = (coinId: string) => {
     removeCoin(coinId);
   };
-
-  const renderPortfolioButton = () => (
-    <Button
-      onClick={() => setVisible(true)}
-      style={{ height: "auto", padding: "5px 10px" }}
-      size={size}
-    >
-      <Flex vertical={true} align="start">
-        <Text>Portfolio:</Text>
-        <Text>
-          <span data-testid="portfolio-value">
-            ${formatNumber(calculatePortfolioValue())}
-          </span>{" "}
-          {portfolioDifference.difference >= 0 ? (
-            <span style={{ color: "green" }}>
-              +{formatNumber(portfolioDifference.difference)} (
-              {portfolioDifference.percentage.toFixed(2)}%)
-            </span>
-          ) : (
-            <span style={{ color: "red" }}>
-              {formatNumber(portfolioDifference.difference)} (
-              {portfolioDifference.percentage.toFixed(2)}%)
-            </span>
-          )}
-        </Text>
-      </Flex>
-    </Button>
-  );
 
   if (isAddCoinMode) {
     return (
@@ -136,7 +108,31 @@ export default function ButtonPortfolio({
   if (isPortfolioMode) {
     return (
       <>
-        {renderPortfolioButton()}
+        <Button
+          onClick={() => setVisible(true)}
+          className="portfolio-value"
+          size={size}
+        >
+          <Flex vertical={true} align="start">
+            <Text>Portfolio:</Text>
+            <Text>
+              <span data-testid="portfolio-value">
+                ${formatNumber(calculatePortfolioValue())}
+              </span>{" "}
+              {portfolioDifference.difference >= 0 ? (
+                <span className="positive-value">
+                  +{formatNumber(portfolioDifference.difference)} (
+                  {portfolioDifference.percentage.toFixed(2)}%)
+                </span>
+              ) : (
+                <span className="negative-value">
+                  {formatNumber(portfolioDifference.difference)} (
+                  {portfolioDifference.percentage.toFixed(2)}%)
+                </span>
+              )}
+            </Text>
+          </Flex>
+        </Button>
         <ModalPortfolio
           visible={visible}
           title="Your Portfolio"

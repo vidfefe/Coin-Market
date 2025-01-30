@@ -69,7 +69,7 @@ export default function CoinDetailsPage() {
         {contextHolder}
         <Row align="middle" justify="center" style={{ minHeight: "100vh" }}>
           <Col>
-            <Button size="large" onClick={() => navigate.back()}>
+            <Button size="large" onClick={() => navigate.push("/")}>
               Back to Coin Table
             </Button>
           </Col>
@@ -90,7 +90,7 @@ export default function CoinDetailsPage() {
 
           <Row gutter={[16, 16]}>
             <Col>
-              <Button size="large" onClick={() => navigate.back()}>
+              <Button size="large" onClick={() => navigate.push("/")}>
                 Back to Coin Table
               </Button>
             </Col>

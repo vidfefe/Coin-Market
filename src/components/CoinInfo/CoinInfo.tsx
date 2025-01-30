@@ -15,12 +15,12 @@ export default function CoinInfo({ name, symbol, priceUsd }: CoinInfoProps) {
     <Flex gap={20} align="center">
       <CoinImage symbol={symbol} size={40} />
       <div>
-        <Title level={2} style={{ margin: 0 }}>
+        <Title level={2} className="coin-title">
           {name}
         </Title>
         <Text type="secondary">{symbol}</Text>
       </div>
-      <Title level={2} style={{ margin: 0 }}>
+      <Title level={2} className="coin-title">
         ${formatNumber(parseFloat(priceUsd))}
       </Title>
     </Flex>

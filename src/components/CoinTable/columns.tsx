@@ -37,7 +37,11 @@ export const columns: TableProps<CoinsData>["columns"] = [
     key: "changePercent24Hr",
     render: (changePercent24Hr) => (
       <span
-        style={{ color: parseFloat(changePercent24Hr) > 0 ? "green" : "red" }}
+        className={
+          parseFloat(changePercent24Hr) > 0
+            ? "positive-value"
+            : "negative-value"
+        }
       >
         {parseFloat(changePercent24Hr).toFixed(2)}%
       </span>

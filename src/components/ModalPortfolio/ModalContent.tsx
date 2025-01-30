@@ -21,12 +21,13 @@ export function AddCoinModalContent({
         <strong>Quantity</strong>
       </p>
       <InputNumber
-        min={1}
+        min={0.01}
         max={1000}
-        step={1}
+        step={0.01}
+        precision={2}
         value={quantity}
-        onChange={(value) => setQuantity(value ?? 0)}
-        style={{ width: "100%" }}
+        onChange={(value) => setQuantity(value ?? 0.01)}
+        className="full-width"
       />
     </>
   );

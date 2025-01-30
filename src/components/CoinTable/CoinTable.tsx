@@ -66,7 +66,22 @@ export default function CoinTable({ searchCoin }: { searchCoin: string }) {
               (modal) => window.getComputedStyle(modal).display !== "none",
             );
 
-            if (isModalVisible || target.closest("button")) {
+            if (isModalVisible) {
+              return;
+            }
+
+            if (target.closest("button, .ant-btn, .ant-image, a")) {
+              event.stopPropagation();
+              return;
+            }
+
+            const imageModal = document.querySelector(
+              ".ant-image-preview-root",
+            );
+            if (
+              imageModal &&
+              window.getComputedStyle(imageModal).display !== "none"
+            ) {
               return;
             }
 

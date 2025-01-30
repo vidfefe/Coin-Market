@@ -48,7 +48,15 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
   }
 
   function removeCoin(coinId: string) {
-    setPortfolio((prev) => prev.filter((coin) => coin.id !== coinId));
+    setPortfolio((prev) => {
+      const updatedPortfolio = prev.filter((coin) => coin.id !== coinId);
+
+      if (updatedPortfolio.length === 0) {
+        localStorage.removeItem("portfolio");
+      }
+
+      return updatedPortfolio;
+    });
   }
 
   function calculatePortfolioValue() {

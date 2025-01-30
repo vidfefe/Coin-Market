@@ -45,15 +45,7 @@ export default function Header() {
   return (
     <>
       {contextHolder}
-      <AntHeader
-        style={{
-          marginBottom: "20px",
-          lineHeight: "0px",
-          paddingTop: "15px",
-          height: "auto",
-          borderBottom: "1px solid rgba(255,255,255,0.3)",
-        }}
-      >
+      <AntHeader>
         <Row justify="space-around" align="middle" gutter={[0, 16]}>
           <Col xs={24} sm={14} lg={10}>
             <Row
@@ -66,11 +58,11 @@ export default function Header() {
                 <Col key={coin.id} xs={7} sm={8} lg={7}>
                   <Flex align="center" gap={15}>
                     <Title
-                      style={{ margin: 0 }}
+                      className="coin-title"
                       level={5}
                     >{`#${coin.rank}`}</Title>
                     <Title
-                      style={{ margin: 0 }}
+                      className="coin-title"
                       level={5}
                     >{`${coin.name}: $${formatNumber(coin.priceUsd)}`}</Title>
                   </Flex>
