@@ -1,10 +1,18 @@
 import axios from "axios";
 
-const API_URL = "https://api.coincap.io/v2";
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_KEY = process.env.NEXT_PUBLIC_COINCAP_KEY;
+
+const axiosInstance = axios.create({
+  baseURL: API_URL,
+  headers: {
+    Authorization: `Bearer ${API_KEY}`,
+  },
+});
 
 export async function getCoins(limit: number, offset: number) {
   try {
-    const response = await axios.get(`${API_URL}/assets`, {
+    const response = await axiosInstance.get(`/assets`, {
       params: { offset, limit },
     });
     return response.data.data;
@@ -15,7 +23,7 @@ export async function getCoins(limit: number, offset: number) {
 
 export async function getCoinDetails(id: string) {
   try {
-    const response = await axios.get(`${API_URL}/assets/${id}`);
+    const response = await axiosInstance.get(`/assets/${id}`);
     return response.data.data;
   } catch (error) {
     console.error(error);
@@ -29,7 +37,7 @@ export async function getCoinHistory(
   end: number,
 ) {
   try {
-    const response = await axios.get(`${API_URL}/assets/${id}/history`, {
+    const response = await axiosInstance.get(`/assets/${id}/history`, {
       params: {
         interval,
         start,
